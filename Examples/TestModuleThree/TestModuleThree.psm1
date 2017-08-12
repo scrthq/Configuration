@@ -79,7 +79,7 @@ function SecureString {
 
 # Set a default key, add Metadata converters to allow use of AES keys, then test to see if the configuration is set:
 try {
-    Set-EncryptionPreference -Method Key -Key ([Byte[]]@(1..16))
+    Set-EncryptionPreference -Method Key -Key ([Byte[]]@(1..16)) # SAMPLE KEY - DON'T USE SOMETHING THIS SIMPLE IF YOU'RE GOING TO USE AN AES KEY!!!
     Add-MetadataConverter -Converters @{
         [PSCredential] = {
             $encParams = @{}
